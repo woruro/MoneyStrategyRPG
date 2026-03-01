@@ -1,0 +1,101 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|c:\\users\\\u571F\u7530\\moneystrategyrpg\\assets\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\shoppingsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\shoppingsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\commandmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\commandmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\scenechanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\scenechanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\battlesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\battlesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameData.cs",
+              "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\GameData.cs",
+              "RelativeDocumentMoniker": "Assets\\GameData.cs",
+              "ToolTip": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\GameData.cs",
+              "RelativeToolTip": "Assets\\GameData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T03:56:46.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CommandMenu.cs",
+              "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\CommandMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\CommandMenu.cs",
+              "ToolTip": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\CommandMenu.cs",
+              "RelativeToolTip": "Assets\\CommandMenu.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAADwvzkAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T13:33:34.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShoppingSystem.cs",
+              "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ShoppingSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\ShoppingSystem.cs",
+              "ToolTip": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ShoppingSystem.cs",
+              "RelativeToolTip": "Assets\\ShoppingSystem.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAgwGEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T07:38:20.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SceneChanger.cs",
+              "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\SceneChanger.cs",
+              "RelativeDocumentMoniker": "Assets\\SceneChanger.cs",
+              "ToolTip": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\SceneChanger.cs",
+              "RelativeToolTip": "Assets\\SceneChanger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T07:00:20.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BattleSystem.cs",
+              "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\BattleSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\BattleSystem.cs",
+              "ToolTip": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\BattleSystem.cs",
+              "RelativeToolTip": "Assets\\BattleSystem.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAwCkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T01:26:34.549Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
