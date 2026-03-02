@@ -120,20 +120,9 @@ public class ShoppingSystem : MonoBehaviour
         }
     }
 
-    public void BuySkill()
-    {
-        int cost = 300;
-        if (GameData.Instance.money >= cost && !GameData.Instance.hasSkill)
-        {
-            GameData.Instance.money -= cost;
-            GameData.Instance.hasSkill = true;
-            UpdateUI();
-        }
-    }
-
     void UpdateUI()
     {
         moneyText.text = $"所持金：{GameData.Instance.money}G";
-        statusText.text = $"Lv {GameData.Instance.level}　ATK {GameData.Instance.atk}　SKILL: {(GameData.Instance.hasSkill ? "あり" : "なし")}";
+        statusText.text = $"Lv {GameData.Instance.level}　ATK {GameData.Instance.atk}";
     }
 }
