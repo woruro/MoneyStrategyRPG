@@ -1,11 +1,12 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using System;
 
 public class CommandMenu : MonoBehaviour
 {
     [SerializeField] private RectTransform cursor;
     [SerializeField] private TextMeshProUGUI[] commands;
-    [SerializeField] private UnityEngine.Events.UnityEvent[] actions;
 
     private int currentIndex = 0;
 
@@ -43,18 +44,36 @@ public class CommandMenu : MonoBehaviour
     }
 
     void UpdateCursor()
-    {
-        RectTransform target = commands[currentIndex].rectTransform;
+{
+    RectTransform target = commands[currentIndex].GetComponent<RectTransform>();
 
-        cursor.anchoredPosition = new Vector2(
-            cursor.anchoredPosition.x,
-            target.anchoredPosition.y
-        );
-    }
+    cursor.position = new Vector3(
+        cursor.position.x,
+        target.position.y,
+        cursor.position.z
+    );
+}
 
     void Decide()
     {
-        Debug.Log("ëIëÇ≥ÇÍÇΩÉRÉ}ÉìÉh: " + commands[currentIndex].text);
-        actions[currentIndex].Invoke();
+        Debug.Log("ÈÅ∏Êäû„Åï„Çå„Åü„Ç≥„Éû„É≥„Éâ: " + commands[currentIndex].text);
+
+        if (commands[currentIndex].text == "„Çπ„Ç≠„É´Ë≥ºÂÖ•")
+        {
+            FindObjectOfType<ShoppingSystem>().OpenSkillPanel();
+        }
+    }
+
+    public void SetCommands(TextMeshProUGUI[] newCommands)
+    {
+        commands = newCommands; 
+        currentIndex = 0; 
+        StartCoroutine(DelayedCursorUpdate());
+    }
+
+    IEnumerator DelayedCursorUpdate()
+    {
+        yield return null; // 1ÔøΩtÔøΩÔøΩÔøΩ[ÔøΩÔøΩÔøΩ“ÇÔøΩ
+        UpdateCursor();
     }
 }

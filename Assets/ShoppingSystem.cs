@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,9 +22,75 @@ public class ShoppingSystem : MonoBehaviour
     // 今開いているサブパネル
     private GameObject currentSubPanel;
 
+    public List<Skill> shopSkills = new List<Skill>();
+    public List<Weapon> shopWeapons = new List<Weapon>();
+
+    public GameObject skillTextPrefab;    // 作ったPrefab
+
+    private List<TextMeshProUGUI> skillTexts = new List<TextMeshProUGUI>();
+
+    public Transform skillContent;   // スキルパネル内の親オブジェクト
+
     private void Start()
     {
+        CreateShopData();
         UpdateUI();
+    }
+
+    void CreateShopData()
+    {
+        // ===== スキル3つ =====
+        shopSkills.Add(new Skill
+        {
+            itemName = "パワースラッシュ",
+            power = 25,
+            mpCost = 5,
+            price = 300,
+            description = "強力な物理攻撃"
+        });
+
+        shopSkills.Add(new Skill
+        {
+            itemName = "ヒール",
+            power = 20,
+            mpCost = 4,
+            price = 250,
+            description = "HPを回復する"
+        });
+
+        shopSkills.Add(new Skill
+        {
+            itemName = "ファイアブレード",
+            power = 30,
+            mpCost = 8,
+            price = 500,
+            description = "炎属性攻撃"
+        });
+
+        // ===== 武器3つ =====
+        shopWeapons.Add(new Weapon
+        {
+            itemName = "鉄の剣",
+            atkBonus = 5,
+            price = 400,
+            description = "攻撃力+5"
+        });
+
+        shopWeapons.Add(new Weapon
+        {
+            itemName = "鋼の剣",
+            atkBonus = 10,
+            price = 800,
+            description = "攻撃力+10"
+        });
+
+        shopWeapons.Add(new Weapon
+        {
+            itemName = "伝説の剣",
+            atkBonus = 20,
+            price = 2000,
+            description = "攻撃力+20"
+        });
     }
 
     // ----------------------------
@@ -32,7 +99,6 @@ public class ShoppingSystem : MonoBehaviour
 
     void OpenSubPanel(GameObject panel)
     {
-        // すでに何か開いているなら閉じる
         if (currentSubPanel != null)
         {
             currentSubPanel.SetActive(false);
@@ -75,7 +141,9 @@ public class ShoppingSystem : MonoBehaviour
 
     public void OpenSkillPanel()
     {
+        Debug.Log("スキルパネルを開こうとしています");
         OpenSubPanel(skillPanel);
+        GenerateSkillList();
     }
 
     public void OpenItemPanel()
@@ -96,6 +164,31 @@ public class ShoppingSystem : MonoBehaviour
     public void OpenMagicPanel()
     {
         OpenSubPanel(magicPanel);
+    }
+
+    void GenerateSkillList()
+    {
+        // 既存の子オブジェクト削除
+        foreach (Transform child in skillContent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        skillTexts.Clear();
+
+        for (int i = 0; i < shopSkills.Count; i++)
+        {
+            GameObject obj = Instantiate(skillTextPrefab, skillContent);
+            TextMeshProUGUI text = obj.GetComponent<TextMeshProUGUI>();
+
+            text.text = shopSkills[i].itemName;
+
+            skillTexts.Add(text);
+        }
+
+        // CommandMenuにテキスト配列を渡す
+        CommandMenu menu = skillPanel.GetComponent<CommandMenu>();
+        menu.SetCommands(skillTexts.ToArray());
     }
 
     public void BuyLevel()
