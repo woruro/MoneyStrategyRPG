@@ -191,6 +191,32 @@ public class ShoppingSystem : MonoBehaviour
         menu.SetCommands(skillTexts.ToArray());
     }
 
+    public void BuySkill(int index)
+    {
+        Skill skill = shopSkills[index];
+
+        // すでに持っているかチェック
+        if (GameData.Instance.ownedSkills.Contains(skill))
+        {
+            Debug.Log("すでに購入済み");
+            return;
+        }
+
+        // お金が足りるか
+        if (GameData.Instance.money >= skill.price)
+        {
+            GameData.Instance.money -= skill.price;
+            GameData.Instance.ownedSkills.Add(skill);
+
+            Debug.Log(skill.itemName + " を購入しました！");
+            UpdateUI();
+        }
+        else
+        {
+            Debug.Log("お金が足りません");
+        }
+    }
+
     public void BuyLevel()
     {
         int cost = 200;

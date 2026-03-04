@@ -58,9 +58,17 @@ public class CommandMenu : MonoBehaviour
     {
         Debug.Log("選択されたコマンド: " + commands[currentIndex].text);
 
+        ShoppingSystem shop = FindObjectOfType<ShoppingSystem>();
+
         if (commands[currentIndex].text == "スキル購入")
         {
-            FindObjectOfType<ShoppingSystem>().OpenSkillPanel();
+            shop.OpenSkillPanel();
+        }
+
+        // 今このCommandMenuがどのパネルに付いているかで分岐
+        if (gameObject == shop.skillPanel)
+        {
+            shop.BuySkill(currentIndex);
         }
     }
 
