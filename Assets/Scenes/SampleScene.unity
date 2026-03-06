@@ -839,7 +839,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1, y: 300}
+  m_SizeDelta: {x: -1, y: 25}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &344593720
 MonoBehaviour:
@@ -871,13 +871,13 @@ MonoBehaviour:
     m_Left: 20
     m_Right: 20
     m_Top: 10
-    m_Bottom: 0
+    m_Bottom: 10
   m_ChildAlignment: 0
   m_Spacing: 5
-  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -4621,7 +4621,7 @@ MonoBehaviour:
   magicPanel: {fileID: 634215871}
   shopSkills: []
   shopWeapons: []
-  skillTextPrefab: {fileID: 4255228480796375859, guid: 5d39f95fa0fd21f4489dc15c909d6671, type: 3}
+  skillRowPrefab: {fileID: 688129993238909875, guid: 4e3cadaa37c86b34e8e8ca70cd996e4e, type: 3}
   skillContent: {fileID: 344593719}
 --- !u!1 &1373473404
 GameObject:

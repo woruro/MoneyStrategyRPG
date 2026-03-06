@@ -25,7 +25,7 @@ public class ShoppingSystem : MonoBehaviour
     public List<Skill> shopSkills = new List<Skill>();
     public List<Weapon> shopWeapons = new List<Weapon>();
 
-    public GameObject skillTextPrefab;    // 作ったPrefab
+    public GameObject skillRowPrefab;    // 作ったPrefab
 
     private List<TextMeshProUGUI> skillTexts = new List<TextMeshProUGUI>();
 
@@ -168,7 +168,6 @@ public class ShoppingSystem : MonoBehaviour
 
     void GenerateSkillList()
     {
-        // 既存の子オブジェクト削除
         foreach (Transform child in skillContent)
         {
             Destroy(child.gameObject);
@@ -178,15 +177,20 @@ public class ShoppingSystem : MonoBehaviour
 
         for (int i = 0; i < shopSkills.Count; i++)
         {
-            GameObject obj = Instantiate(skillTextPrefab, skillContent);
-            TextMeshProUGUI text = obj.GetComponent<TextMeshProUGUI>();
+            GameObject obj = Instantiate(skillRowPrefab, skillContent);
 
-            text.text = shopSkills[i].itemName;
+            TextMeshProUGUI nameText =
+                obj.transform.Find("SkillNameText").GetComponent<TextMeshProUGUI>();
 
-            skillTexts.Add(text);
+            TextMeshProUGUI priceText =
+                obj.transform.Find("PriceText").GetComponent<TextMeshProUGUI>();
+
+            nameText.text = shopSkills[i].itemName;
+            priceText.text = shopSkills[i].price + "G";
+
+            skillTexts.Add(nameText);
         }
 
-        // CommandMenuにテキスト配列を渡す
         CommandMenu menu = skillPanel.GetComponent<CommandMenu>();
         menu.SetCommands(skillTexts.ToArray());
     }
