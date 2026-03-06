@@ -44,15 +44,15 @@ public class CommandMenu : MonoBehaviour
     }
 
     void UpdateCursor()
-{
-    RectTransform target = commands[currentIndex].GetComponent<RectTransform>();
+    {
+        RectTransform target = commands[currentIndex].GetComponent<RectTransform>();
 
-    cursor.position = new Vector3(
-        cursor.position.x,
-        target.position.y,
-        cursor.position.z
-    );
-}
+        cursor.position = new Vector3(
+            cursor.position.x,
+            target.position.y,
+            cursor.position.z
+        );
+    }
 
     void Decide()
     {
