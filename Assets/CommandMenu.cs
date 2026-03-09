@@ -65,10 +65,19 @@ public class CommandMenu : MonoBehaviour
             shop.OpenSkillPanel();
         }
 
+        if (commands[currentIndex].text == "武器購入")
+        {
+            shop.OpenWeaponPanel();
+        }
+
         // 今このCommandMenuがどのパネルに付いているかで分岐
         if (gameObject == shop.skillPanel)
         {
             shop.BuySkill(currentIndex);
+        }
+        if (gameObject == shop.weaponPanel)
+        {
+            shop.BuyWeapon(currentIndex);
         }
     }
 

@@ -26,10 +26,13 @@ public class ShoppingSystem : MonoBehaviour
     public List<Weapon> shopWeapons = new List<Weapon>();
 
     public GameObject skillRowPrefab;    // 作ったPrefab
+    public GameObject weaponRowPrefab;
 
     private List<TextMeshProUGUI> skillTexts = new List<TextMeshProUGUI>();
+    private List<TextMeshProUGUI> weaponTexts = new List<TextMeshProUGUI>();
 
     public Transform skillContent;   // スキルパネル内の親オブジェクト
+    public Transform weaponContent;
 
     private void Start()
     {
@@ -154,6 +157,7 @@ public class ShoppingSystem : MonoBehaviour
     public void OpenWeaponPanel()
     {
         OpenSubPanel(weaponPanel);
+        GenerateWeaponList();
     }
 
     public void OpenArmorPanel()
@@ -195,6 +199,35 @@ public class ShoppingSystem : MonoBehaviour
         menu.SetCommands(skillTexts.ToArray());
     }
 
+    void GenerateWeaponList()
+    {
+        foreach (Transform child in weaponContent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        weaponTexts.Clear();
+
+        for (int i = 0; i < shopWeapons.Count; i++)
+        {
+            GameObject obj = Instantiate(weaponRowPrefab, weaponContent);
+
+            TextMeshProUGUI nameText =
+                obj.transform.Find("WeaponNameText").GetComponent<TextMeshProUGUI>();
+
+            TextMeshProUGUI priceText =
+                obj.transform.Find("PriceText").GetComponent<TextMeshProUGUI>();
+
+            nameText.text = shopWeapons[i].itemName;
+            priceText.text = shopWeapons[i].price + "G";
+
+            weaponTexts.Add(nameText);
+        }
+
+        CommandMenu menu = weaponPanel.GetComponent<CommandMenu>();
+        menu.SetCommands(weaponTexts.ToArray());
+    }
+
     public void BuySkill(int index)
     {
         Skill skill = shopSkills[index];
@@ -218,6 +251,19 @@ public class ShoppingSystem : MonoBehaviour
         else
         {
             Debug.Log("お金が足りません");
+        }
+    }
+
+    public void BuyWeapon(int index)
+    {
+        Weapon weapon = shopWeapons[index];
+
+        if (GameData.Instance.money >= weapon.price)
+        {
+            GameData.Instance.money -= weapon.price;
+            GameData.Instance.ownedWeapons.Add(weapon);
+
+            UpdateUI();
         }
     }
 
