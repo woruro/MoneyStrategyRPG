@@ -10,6 +10,8 @@ public class CommandMenu : MonoBehaviour
 
     private int currentIndex = 0;
 
+    public ShoppingSystem shop;
+
     void Start()
     {
         UpdateCursor();
@@ -58,27 +60,9 @@ public class CommandMenu : MonoBehaviour
     {
         Debug.Log("選択されたコマンド: " + commands[currentIndex].text);
 
-        ShoppingSystem shop = FindObjectOfType<ShoppingSystem>();
+        ShopCategory category = shop.categories[currentIndex];
 
-        if (commands[currentIndex].text == "スキル購入")
-        {
-            shop.OpenSkillPanel();
-        }
-
-        if (commands[currentIndex].text == "武器購入")
-        {
-            shop.OpenWeaponPanel();
-        }
-
-        // 今このCommandMenuがどのパネルに付いているかで分岐
-        if (gameObject == shop.skillPanel)
-        {
-            shop.BuySkill(currentIndex);
-        }
-        if (gameObject == shop.weaponPanel)
-        {
-            shop.BuyWeapon(currentIndex);
-        }
+        shop.OpenCategory(category);
     }
 
     public void SetCommands(TextMeshProUGUI[] newCommands)

@@ -229,6 +229,7 @@ MonoBehaviour:
   - {fileID: 1872684944}
   - {fileID: 1400951609}
   - {fileID: 1913017878}
+  shop: {fileID: 1340307966}
 --- !u!1 &99360797
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +767,7 @@ MonoBehaviour:
   - {fileID: 1894099104}
   - {fileID: 154820269}
   - {fileID: 2015747470}
+  shop: {fileID: 0}
 --- !u!114 &256893180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2492,6 +2494,7 @@ MonoBehaviour:
   - {fileID: 514985137}
   - {fileID: 433752115}
   - {fileID: 99360798}
+  shop: {fileID: 0}
 --- !u!114 &634215873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2879,6 +2882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursor: {fileID: 455656767}
   commands: []
+  shop: {fileID: 0}
 --- !u!114 &862403619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4147,12 +4151,17 @@ MonoBehaviour:
   weaponPanel: {fileID: 862403616}
   armorPanel: {fileID: 256893177}
   magicPanel: {fileID: 634215871}
-  shopSkills: []
-  shopWeapons: []
-  skillRowPrefab: {fileID: 688129993238909875, guid: 4e3cadaa37c86b34e8e8ca70cd996e4e, type: 3}
-  weaponRowPrefab: {fileID: 688129993238909875, guid: 3ba4d6c9e9fb82a4aa4dbed1543bacc5, type: 3}
-  skillContent: {fileID: 344593719}
-  weaponContent: {fileID: 413567772}
+  categories:
+  - categoryName: Skill
+    panel: {fileID: 1526431665}
+    rowPrefab: {fileID: 688129993238909875, guid: 4e3cadaa37c86b34e8e8ca70cd996e4e, type: 3}
+    content: {fileID: 344593719}
+    items: []
+  - categoryName: Weapon
+    panel: {fileID: 862403616}
+    rowPrefab: {fileID: 688129993238909875, guid: 3ba4d6c9e9fb82a4aa4dbed1543bacc5, type: 3}
+    content: {fileID: 413567772}
+    items: []
 --- !u!1 &1373473404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4488,6 +4497,7 @@ MonoBehaviour:
   - {fileID: 1664380142}
   - {fileID: 788383166}
   - {fileID: 685689062}
+  shop: {fileID: 0}
 --- !u!114 &1408907423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4583,6 +4593,7 @@ MonoBehaviour:
   cursor: {fileID: 1598369139}
   commands:
   - {fileID: 0}
+  shop: {fileID: 0}
 --- !u!114 &1526431668
 MonoBehaviour:
   m_ObjectHideFlags: 0

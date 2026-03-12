@@ -22,17 +22,7 @@ public class ShoppingSystem : MonoBehaviour
     // 今開いているサブパネル
     private GameObject currentSubPanel;
 
-    public List<Skill> shopSkills = new List<Skill>();
-    public List<Weapon> shopWeapons = new List<Weapon>();
-
-    public GameObject skillRowPrefab;    // 作ったPrefab
-    public GameObject weaponRowPrefab;
-
-    private List<TextMeshProUGUI> skillTexts = new List<TextMeshProUGUI>();
-    private List<TextMeshProUGUI> weaponTexts = new List<TextMeshProUGUI>();
-
-    public Transform skillContent;   // スキルパネル内の親オブジェクト
-    public Transform weaponContent;
+    public List<ShopCategory> categories = new List<ShopCategory>();
 
     private void Start()
     {
@@ -42,8 +32,12 @@ public class ShoppingSystem : MonoBehaviour
 
     void CreateShopData()
     {
-        // ===== スキル3つ =====
-        shopSkills.Add(new Skill
+        ShopCategory skillCategory = categories[0];
+        ShopCategory weaponCategory = categories[1];
+
+        // ===== スキル =====
+
+        skillCategory.items.Add(new Skill
         {
             itemName = "パワースラッシュ",
             power = 25,
@@ -52,7 +46,7 @@ public class ShoppingSystem : MonoBehaviour
             description = "強力な物理攻撃"
         });
 
-        shopSkills.Add(new Skill
+        skillCategory.items.Add(new Skill
         {
             itemName = "ヒール",
             power = 20,
@@ -61,7 +55,7 @@ public class ShoppingSystem : MonoBehaviour
             description = "HPを回復する"
         });
 
-        shopSkills.Add(new Skill
+        skillCategory.items.Add(new Skill
         {
             itemName = "ファイアブレード",
             power = 30,
@@ -70,8 +64,9 @@ public class ShoppingSystem : MonoBehaviour
             description = "炎属性攻撃"
         });
 
-        // ===== 武器3つ =====
-        shopWeapons.Add(new Weapon
+        // ===== 武器 =====
+
+        weaponCategory.items.Add(new Weapon
         {
             itemName = "鉄の剣",
             atkBonus = 5,
@@ -79,7 +74,7 @@ public class ShoppingSystem : MonoBehaviour
             description = "攻撃力+5"
         });
 
-        shopWeapons.Add(new Weapon
+        weaponCategory.items.Add(new Weapon
         {
             itemName = "鋼の剣",
             atkBonus = 10,
@@ -87,7 +82,7 @@ public class ShoppingSystem : MonoBehaviour
             description = "攻撃力+10"
         });
 
-        shopWeapons.Add(new Weapon
+        weaponCategory.items.Add(new Weapon
         {
             itemName = "伝説の剣",
             atkBonus = 20,
@@ -142,149 +137,54 @@ public class ShoppingSystem : MonoBehaviour
     // 各パネルを開く関数
     // ----------------------------
 
-    public void OpenSkillPanel()
+    public void OpenCategory(ShopCategory category)
     {
-        Debug.Log("スキルパネルを開こうとしています");
-        OpenSubPanel(skillPanel);
-        GenerateSkillList();
+        Debug.Log("Category panel: " + category.panel);
+
+        OpenSubPanel(category.panel);
+
+        GenerateList(category);
     }
 
-    public void OpenItemPanel()
+    void GenerateList(ShopCategory category)
     {
-        OpenSubPanel(itemPanel);
-    }
-
-    public void OpenWeaponPanel()
-    {
-        OpenSubPanel(weaponPanel);
-        GenerateWeaponList();
-    }
-
-    public void OpenArmorPanel()
-    {
-        OpenSubPanel(armorPanel);
-    }
-
-    public void OpenMagicPanel()
-    {
-        OpenSubPanel(magicPanel);
-    }
-
-    void GenerateSkillList()
-    {
-        foreach (Transform child in skillContent)
+        foreach (Transform child in category.content)
         {
             Destroy(child.gameObject);
         }
 
-        skillTexts.Clear();
+        List<TextMeshProUGUI> texts = new List<TextMeshProUGUI>();
 
-        for (int i = 0; i < shopSkills.Count; i++)
+        for (int i = 0; i < category.items.Count; i++)
         {
-            GameObject obj = Instantiate(skillRowPrefab, skillContent);
+            GameObject obj = Instantiate(category.rowPrefab, category.content);
 
             TextMeshProUGUI nameText =
-                obj.transform.Find("SkillNameText").GetComponent<TextMeshProUGUI>();
+                obj.transform.Find("NameText").GetComponent<TextMeshProUGUI>();
 
             TextMeshProUGUI priceText =
                 obj.transform.Find("PriceText").GetComponent<TextMeshProUGUI>();
 
-            nameText.text = shopSkills[i].itemName;
-            priceText.text = shopSkills[i].price + "G";
+            nameText.text = category.items[i].itemName;
+            priceText.text = category.items[i].price + "G";
 
-            skillTexts.Add(nameText);
+            texts.Add(nameText);
         }
 
-        CommandMenu menu = skillPanel.GetComponent<CommandMenu>();
-        menu.SetCommands(skillTexts.ToArray());
+        CommandMenu menu = category.panel.GetComponent<CommandMenu>();
+        menu.SetCommands(texts.ToArray());
     }
 
-    void GenerateWeaponList()
+    public void BuyItem(ShopCategory category, int index)
     {
-        foreach (Transform child in weaponContent)
+        ItemBase item = category.items[index];
+
+        if (GameData.Instance.money >= item.price)
         {
-            Destroy(child.gameObject);
-        }
+            GameData.Instance.money -= item.price;
 
-        weaponTexts.Clear();
+            Debug.Log(item.itemName + " を購入");
 
-        for (int i = 0; i < shopWeapons.Count; i++)
-        {
-            GameObject obj = Instantiate(weaponRowPrefab, weaponContent);
-
-            TextMeshProUGUI nameText =
-                obj.transform.Find("WeaponNameText").GetComponent<TextMeshProUGUI>();
-
-            TextMeshProUGUI priceText =
-                obj.transform.Find("PriceText").GetComponent<TextMeshProUGUI>();
-
-            nameText.text = shopWeapons[i].itemName;
-            priceText.text = shopWeapons[i].price + "G";
-
-            weaponTexts.Add(nameText);
-        }
-
-        CommandMenu menu = weaponPanel.GetComponent<CommandMenu>();
-        menu.SetCommands(weaponTexts.ToArray());
-    }
-
-    public void BuySkill(int index)
-    {
-        Skill skill = shopSkills[index];
-
-        // すでに持っているかチェック
-        if (GameData.Instance.ownedSkills.Contains(skill))
-        {
-            Debug.Log("すでに購入済み");
-            return;
-        }
-
-        // お金が足りるか
-        if (GameData.Instance.money >= skill.price)
-        {
-            GameData.Instance.money -= skill.price;
-            GameData.Instance.ownedSkills.Add(skill);
-
-            Debug.Log(skill.itemName + " を購入しました！");
-            UpdateUI();
-        }
-        else
-        {
-            Debug.Log("お金が足りません");
-        }
-    }
-
-    public void BuyWeapon(int index)
-    {
-        Weapon weapon = shopWeapons[index];
-
-        if (GameData.Instance.money >= weapon.price)
-        {
-            GameData.Instance.money -= weapon.price;
-            GameData.Instance.ownedWeapons.Add(weapon);
-
-            UpdateUI();
-        }
-    }
-
-    public void BuyLevel()
-    {
-        int cost = 200;
-        if (GameData.Instance.money >= cost)
-        {
-            GameData.Instance.money -= cost;
-            GameData.Instance.level++;
-            UpdateUI();
-        }
-    }
-
-    public void BuyAttack()
-    {
-        int cost = 150;
-        if (GameData.Instance.money >= cost)
-        {
-            GameData.Instance.money -= cost;
-            GameData.Instance.atk += 5;
             UpdateUI();
         }
     }
