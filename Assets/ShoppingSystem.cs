@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ShoppingSystem : MonoBehaviour
 {
@@ -11,13 +10,6 @@ public class ShoppingSystem : MonoBehaviour
 
     // メイン
     public GameObject mainPanel;
-
-    // サブパネル
-    public GameObject skillPanel;
-    public GameObject itemPanel;
-    public GameObject weaponPanel;
-    public GameObject armorPanel;
-    public GameObject magicPanel;
 
     // 今開いているサブパネル
     private GameObject currentSubPanel;
@@ -36,7 +28,6 @@ public class ShoppingSystem : MonoBehaviour
         ShopCategory weaponCategory = categories[1];
 
         // ===== スキル =====
-
         skillCategory.items.Add(new Skill
         {
             itemName = "パワースラッシュ",
@@ -65,7 +56,6 @@ public class ShoppingSystem : MonoBehaviour
         });
 
         // ===== 武器 =====
-
         weaponCategory.items.Add(new Weapon
         {
             itemName = "鉄の剣",
@@ -92,7 +82,25 @@ public class ShoppingSystem : MonoBehaviour
     }
 
     // ----------------------------
-    // サブパネル共通処理
+    // メニューから呼ばれる
+    // ----------------------------
+
+    public void OpenCategory(int categoryIndex)
+    {
+        if (categoryIndex < 0 || categoryIndex >= categories.Count)
+        {
+            Debug.Log("カテゴリ未実装");
+            return;
+        }
+
+        ShopCategory category = categories[categoryIndex];
+
+        OpenSubPanel(category.panel);
+        GenerateList(category);
+    }
+
+    // ----------------------------
+    // パネル管理
     // ----------------------------
 
     void OpenSubPanel(GameObject panel)
@@ -121,11 +129,9 @@ public class ShoppingSystem : MonoBehaviour
 
     void Update()
     {
-        // ESCキー or テンキー0
         if (Input.GetKeyDown(KeyCode.Escape) ||
             Input.GetKeyDown(KeyCode.Keypad0))
         {
-            // サブパネルが開いているときだけ閉じる
             if (currentSubPanel != null)
             {
                 CloseSubPanel();
@@ -134,17 +140,8 @@ public class ShoppingSystem : MonoBehaviour
     }
 
     // ----------------------------
-    // 各パネルを開く関数
+    // 商品生成
     // ----------------------------
-
-    public void OpenCategory(ShopCategory category)
-    {
-        Debug.Log("Category panel: " + category.panel);
-
-        OpenSubPanel(category.panel);
-
-        GenerateList(category);
-    }
 
     void GenerateList(ShopCategory category)
     {
@@ -172,12 +169,22 @@ public class ShoppingSystem : MonoBehaviour
         }
 
         CommandMenu menu = category.panel.GetComponent<CommandMenu>();
+
+        menu.category = category;
+        menu.isShopList = true;
+
         menu.SetCommands(texts.ToArray());
     }
+
+    // ----------------------------
+    // 購入処理
+    // ----------------------------
 
     public void BuyItem(ShopCategory category, int index)
     {
         ItemBase item = category.items[index];
+
+        Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
         if (GameData.Instance.money >= item.price)
         {
@@ -192,6 +199,6 @@ public class ShoppingSystem : MonoBehaviour
     void UpdateUI()
     {
         moneyText.text = $"所持金：{GameData.Instance.money}G";
-        statusText.text = $"Lv {GameData.Instance.level}　ATK {GameData.Instance.atk}";
+        statusText.text = $"Lv {GameData.Instance.level} ATK {GameData.Instance.atk}";
     }
 }

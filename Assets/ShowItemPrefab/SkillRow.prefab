@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 9137396353433618626}
   - component: {fileID: 7275318036603185847}
   m_Layer: 5
-  m_Name: SkillNameText
+  m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

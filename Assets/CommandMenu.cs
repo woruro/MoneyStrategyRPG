@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using System;
 
 public class CommandMenu : MonoBehaviour
 {
@@ -12,13 +11,16 @@ public class CommandMenu : MonoBehaviour
 
     public ShoppingSystem shop;
 
-    void Start()
-    {
-        UpdateCursor();
-    }
+    public bool isShopList = false;
+    public ShopCategory category;
+
+    // メインメニューの場合のみ設定
+    public int categoryOffset = 0;
 
     void Update()
     {
+        if (commands == null || commands.Length == 0) return;
+
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             MoveUp();
@@ -47,6 +49,8 @@ public class CommandMenu : MonoBehaviour
 
     void UpdateCursor()
     {
+        if (commands == null || commands.Length == 0) return;
+
         RectTransform target = commands[currentIndex].GetComponent<RectTransform>();
 
         cursor.position = new Vector3(
@@ -60,21 +64,26 @@ public class CommandMenu : MonoBehaviour
     {
         Debug.Log("選択されたコマンド: " + commands[currentIndex].text);
 
-        ShopCategory category = shop.categories[currentIndex];
-
-        shop.OpenCategory(category);
+        if (!isShopList)
+        {
+            shop.OpenCategory(currentIndex - categoryOffset);
+        }
+        else
+        {
+            shop.BuyItem(category, currentIndex);
+        }
     }
 
     public void SetCommands(TextMeshProUGUI[] newCommands)
     {
-        commands = newCommands; 
-        currentIndex = 0; 
+        commands = newCommands;
+        currentIndex = 0;
         StartCoroutine(DelayedCursorUpdate());
     }
 
     IEnumerator DelayedCursorUpdate()
     {
-        yield return null; // 1�t���[���҂�
+        yield return null;
         UpdateCursor();
     }
 }
