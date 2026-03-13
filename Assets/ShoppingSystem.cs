@@ -16,6 +16,17 @@ public class ShoppingSystem : MonoBehaviour
 
     public List<ShopCategory> categories = new List<ShopCategory>();
 
+    ShopCategory GetCategory(ShopCategoryType type)
+    {
+        foreach (var c in categories)
+        {
+            if (c.type == type)
+                return c;
+        }
+
+        return null;
+    }
+
     private void Start()
     {
         CreateShopData();
@@ -24,11 +35,11 @@ public class ShoppingSystem : MonoBehaviour
 
     void CreateShopData()
     {
-        ShopCategory skillCategory = categories[0];
-        ShopCategory weaponCategory = categories[1];
+        ShopCategory skillCategory = GetCategory(ShopCategoryType.Skill);
+        ShopCategory weaponCategory = GetCategory(ShopCategoryType.Weapon);
 
         // ===== スキル =====
-        skillCategory.items.Add(new Skill
+        AddItem(ShopCategoryType.Skill, new Skill
         {
             itemName = "パワースラッシュ",
             power = 25,
@@ -37,7 +48,7 @@ public class ShoppingSystem : MonoBehaviour
             description = "強力な物理攻撃"
         });
 
-        skillCategory.items.Add(new Skill
+        AddItem(ShopCategoryType.Skill, new Skill
         {
             itemName = "ヒール",
             power = 20,
@@ -46,7 +57,7 @@ public class ShoppingSystem : MonoBehaviour
             description = "HPを回復する"
         });
 
-        skillCategory.items.Add(new Skill
+        AddItem(ShopCategoryType.Skill, new Skill
         {
             itemName = "ファイアブレード",
             power = 30,
@@ -56,7 +67,7 @@ public class ShoppingSystem : MonoBehaviour
         });
 
         // ===== 武器 =====
-        weaponCategory.items.Add(new Weapon
+        AddItem(ShopCategoryType.Weapon, new Weapon
         {
             itemName = "鉄の剣",
             atkBonus = 5,
@@ -64,7 +75,7 @@ public class ShoppingSystem : MonoBehaviour
             description = "攻撃力+5"
         });
 
-        weaponCategory.items.Add(new Weapon
+        AddItem(ShopCategoryType.Weapon, new Weapon
         {
             itemName = "鋼の剣",
             atkBonus = 10,
@@ -72,13 +83,21 @@ public class ShoppingSystem : MonoBehaviour
             description = "攻撃力+10"
         });
 
-        weaponCategory.items.Add(new Weapon
+        AddItem(ShopCategoryType.Weapon, new Weapon
         {
             itemName = "伝説の剣",
             atkBonus = 20,
             price = 2000,
             description = "攻撃力+20"
         });
+    }
+
+    void AddItem(ShopCategoryType type, ItemBase item)
+    {
+        ShopCategory category = GetCategory(type);
+
+        if (category != null)
+            category.items.Add(item);
     }
 
     // ----------------------------

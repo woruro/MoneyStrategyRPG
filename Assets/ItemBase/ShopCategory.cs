@@ -2,15 +2,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ShopCategory
+public class ShopCategory : MonoBehaviour
 {
-    public string categoryName;
+    public ShopCategoryType type;
 
     public GameObject panel;
-
+    public Transform content;
     public GameObject rowPrefab;
 
-    public Transform content;
-
     public List<ItemBase> items = new List<ItemBase>();
+}
+
+public enum ShopCategoryType
+{
+    Skill,
+    Weapon,
+    Item,
+    Armor,
+    Magic
 }

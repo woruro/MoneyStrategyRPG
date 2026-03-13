@@ -230,6 +230,8 @@ MonoBehaviour:
   - {fileID: 1400951609}
   - {fileID: 1913017878}
   shop: {fileID: 1340307966}
+  isShopList: 0
+  category: {fileID: 0}
   categoryOffset: 2
 --- !u!1 &99360797
 GameObject:
@@ -769,6 +771,8 @@ MonoBehaviour:
   - {fileID: 154820269}
   - {fileID: 2015747470}
   shop: {fileID: 0}
+  isShopList: 0
+  category: {fileID: 0}
   categoryOffset: 0
 --- !u!114 &256893180
 MonoBehaviour:
@@ -2497,6 +2501,8 @@ MonoBehaviour:
   - {fileID: 433752115}
   - {fileID: 99360798}
   shop: {fileID: 0}
+  isShopList: 0
+  category: {fileID: 0}
   categoryOffset: 0
 --- !u!114 &634215873
 MonoBehaviour:
@@ -2885,7 +2891,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursor: {fileID: 455656767}
   commands: []
-  shop: {fileID: 0}
+  shop: {fileID: 1340307966}
+  isShopList: 0
+  category: {fileID: 0}
   categoryOffset: 0
 --- !u!114 &862403619
 MonoBehaviour:
@@ -4104,6 +4112,7 @@ RectTransform:
   - {fileID: 1408907421}
   - {fileID: 634215875}
   - {fileID: 1526431666}
+  - {fileID: 1883185956}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4151,21 +4160,8 @@ MonoBehaviour:
   statusText: {fileID: 1736291887}
   mainPanel: {fileID: 16668479}
   categories:
-  - categoryName: Skill
-    panel: {fileID: 1526431665}
-    rowPrefab: {fileID: 688129993238909875, guid: 4e3cadaa37c86b34e8e8ca70cd996e4e, type: 3}
-    content: {fileID: 344593719}
-    items: []
-  - categoryName: Weapon
-    panel: {fileID: 862403616}
-    rowPrefab: {fileID: 688129993238909875, guid: 3ba4d6c9e9fb82a4aa4dbed1543bacc5, type: 3}
-    content: {fileID: 413567772}
-    items: []
-  - categoryName: Skill
-    panel: {fileID: 1526431665}
-    rowPrefab: {fileID: 688129993238909875, guid: 4e3cadaa37c86b34e8e8ca70cd996e4e, type: 3}
-    content: {fileID: 344593719}
-    items: []
+  - {fileID: 1883185957}
+  - {fileID: 0}
 --- !u!1 &1373473404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4502,6 +4498,8 @@ MonoBehaviour:
   - {fileID: 788383166}
   - {fileID: 685689062}
   shop: {fileID: 0}
+  isShopList: 0
+  category: {fileID: 0}
   categoryOffset: 0
 --- !u!114 &1408907423
 MonoBehaviour:
@@ -4598,7 +4596,9 @@ MonoBehaviour:
   cursor: {fileID: 1598369139}
   commands:
   - {fileID: 0}
-  shop: {fileID: 0}
+  shop: {fileID: 1340307966}
+  isShopList: 0
+  category: {fileID: 0}
   categoryOffset: 0
 --- !u!114 &1526431668
 MonoBehaviour:
@@ -5350,6 +5350,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872684942}
   m_CullTransparentMesh: 1
+--- !u!1 &1883185955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883185956}
+  - component: {fileID: 1883185957}
+  m_Layer: 5
+  m_Name: CategorySkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1883185956
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883185955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1340307962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1883185957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883185955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b4b9869f5c8a14ba054e25caffaa3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  panel: {fileID: 1526431665}
+  content: {fileID: 344593719}
+  rowPrefab: {fileID: 688129993238909875, guid: 4e3cadaa37c86b34e8e8ca70cd996e4e, type: 3}
+  items: []
 --- !u!1 &1894099102
 GameObject:
   m_ObjectHideFlags: 0
