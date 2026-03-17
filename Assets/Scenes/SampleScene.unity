@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 42170708}
   - component: {fileID: 42170707}
   m_Layer: 5
-  m_Name: ArmorContent
+  m_Name: ConsumableItemContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3485,13 +3485,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  panel: {fileID: 975725117}
-  content: {fileID: 85300348}
-  rowPrefab: {fileID: 688129993238909875, guid: 09fd432b3b758f947845624fb7154bba, type: 3}
+  panel: {fileID: 1822921482}
+  content: {fileID: 42170706}
+  rowPrefab: {fileID: 688129993238909875, guid: fa9e09e1aaf9960469d1488f6dafa0d9, type: 3}
   items:
-  - {fileID: 11400000, guid: 51c0f938ef34ecd42881c0375150118e, type: 2}
-  - {fileID: 11400000, guid: 6262b14b3571b6a4ca1dfe550302adf4, type: 2}
-  - {fileID: 11400000, guid: 5958badad089fe44b9a2d1bbc36e5556, type: 2}
+  - {fileID: 11400000, guid: 711198c90483778499b48e27408b18d6, type: 2}
+  - {fileID: 11400000, guid: 15b30e00bce6e9948a7c84ac138f4374, type: 2}
+  - {fileID: 11400000, guid: a40c47fe577506e45ba3d57c67efa092, type: 2}
 --- !u!1 &918243498
 GameObject:
   m_ObjectHideFlags: 0
@@ -5122,6 +5122,8 @@ MonoBehaviour:
   - {fileID: 1883185957}
   - {fileID: 1235910442}
   - {fileID: 704425699}
+  - {fileID: 0}
+  - {fileID: 915433096}
 --- !u!1 &1373473404
 GameObject:
   m_ObjectHideFlags: 0

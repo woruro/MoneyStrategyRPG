@@ -37,7 +37,8 @@ public class ShoppingSystem : MonoBehaviour
     {
         ShopCategory skillCategory = GetCategory(ShopCategoryType.Skill);
         ShopCategory weaponCategory = GetCategory(ShopCategoryType.Weapon);
-        ShopCategory ArmorCategory = GetCategory(ShopCategoryType.Armor);
+        ShopCategory armorCategory = GetCategory(ShopCategoryType.Armor);
+        ShopCategory consumableItemCategory = GetCategory(ShopCategoryType.ConsumableItem);
     }
 
     void AddItem(ShopCategoryType type, ItemBase item)

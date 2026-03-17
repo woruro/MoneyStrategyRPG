@@ -17,7 +17,7 @@ public enum ShopCategoryType
 {
     Skill,
     Weapon,
-    Item,
+    ConsumableItem,
     Armor,
     Magic
 }
