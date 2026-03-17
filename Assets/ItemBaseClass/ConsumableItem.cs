@@ -1,6 +1,9 @@
+using UnityEngine;
+
 [System.Serializable]
+[CreateAssetMenu(menuName = "RPG/ConsumableItem")]
 public class ConsumableItem : ItemBase
 {
-    public int hpRecover;
-    public int mpRecover;
+    public int hpHeal;
+    public int mpHeal;
 }
