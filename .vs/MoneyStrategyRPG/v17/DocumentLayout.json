@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\itembase\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\itembase\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|c:\\users\\\u571F\u7530\\moneystrategyrpg\\assets\\itembase\\armor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\itembase\\armor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\shoppingsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\shoppingsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|c:\\users\\\u571F\u7530\\moneystrategyrpg\\assets\\commandmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\commandmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\commandmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,14 +35,6 @@
       "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\battlesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\itembase\\armor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\itembase\\armor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\itembase\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\itembase\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\assets\\itembase\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{289D3DF0-4051-7D20-B18B-FC63AD7B4E73}|Assembly-CSharp.csproj|solutionrelative:assets\\itembase\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -50,23 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ItemBase.cs",
-              "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ItemBase\\ItemBase.cs",
-              "RelativeDocumentMoniker": "Assets\\ItemBase\\ItemBase.cs",
-              "ToolTip": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ItemBase\\ItemBase.cs",
-              "RelativeToolTip": "Assets\\ItemBase\\ItemBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T08:32:57.31Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Armor.cs",
               "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ItemBase\\Armor.cs",
               "RelativeDocumentMoniker": "Assets\\ItemBase\\Armor.cs",
@@ -74,11 +62,12 @@
               "RelativeToolTip": "Assets\\ItemBase\\Armor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T05:43:49.574Z"
+              "WhenOpened": "2026-03-03T05:43:49.574Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "GameData.cs",
               "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\GameData.cs",
               "RelativeDocumentMoniker": "Assets\\GameData.cs",
@@ -86,12 +75,11 @@
               "RelativeToolTip": "Assets\\GameData.cs",
               "ViewState": "AQIAACsAAAAAAAAAAAAAwCYAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T03:56:46.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T03:56:46.675Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CommandMenu.cs",
               "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\CommandMenu.cs",
               "RelativeDocumentMoniker": "Assets\\CommandMenu.cs",
@@ -99,8 +87,7 @@
               "RelativeToolTip": "Assets\\CommandMenu.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAmwEgAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T13:33:34.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-15T13:33:34.679Z"
             },
             {
               "$type": "Document",
@@ -116,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ShoppingSystem.cs",
               "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ShoppingSystem.cs",
               "RelativeDocumentMoniker": "Assets\\ShoppingSystem.cs",
@@ -124,12 +111,11 @@
               "RelativeToolTip": "Assets\\ShoppingSystem.cs",
               "ViewState": "AQIAAEoAAAAAAAAAAAAQwFUAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T07:38:20.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-06T07:38:20.543Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "SceneChanger.cs",
               "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\SceneChanger.cs",
               "RelativeDocumentMoniker": "Assets\\SceneChanger.cs",
@@ -137,12 +123,11 @@
               "RelativeToolTip": "Assets\\SceneChanger.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T07:00:20.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-06T07:00:20.272Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "BattleSystem.cs",
               "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\BattleSystem.cs",
               "RelativeDocumentMoniker": "Assets\\BattleSystem.cs",
@@ -154,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ShopCategory.cs",
               "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ItemBase\\ShopCategory.cs",
               "RelativeDocumentMoniker": "Assets\\ItemBase\\ShopCategory.cs",
@@ -162,12 +147,11 @@
               "RelativeToolTip": "Assets\\ItemBase\\ShopCategory.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T08:41:47.061Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-09T08:41:47.061Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "Weapon.cs",
               "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ItemBase\\Weapon.cs",
               "RelativeDocumentMoniker": "Assets\\ItemBase\\Weapon.cs",
@@ -175,7 +159,20 @@
               "RelativeToolTip": "Assets\\ItemBase\\Weapon.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T08:33:03.433Z"
+              "WhenOpened": "2026-03-09T08:33:03.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ItemBase.cs",
+              "DocumentMoniker": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ItemBase\\ItemBase.cs",
+              "RelativeDocumentMoniker": "Assets\\ItemBase\\ItemBase.cs",
+              "ToolTip": "C:\\Users\\\u571F\u7530\\MoneyStrategyRPG\\Assets\\ItemBase\\ItemBase.cs",
+              "RelativeToolTip": "Assets\\ItemBase\\ItemBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T08:32:57.31Z"
             }
           ]
         }

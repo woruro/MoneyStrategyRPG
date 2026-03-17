@@ -37,59 +37,6 @@ public class ShoppingSystem : MonoBehaviour
     {
         ShopCategory skillCategory = GetCategory(ShopCategoryType.Skill);
         ShopCategory weaponCategory = GetCategory(ShopCategoryType.Weapon);
-
-        // ===== スキル =====
-        AddItem(ShopCategoryType.Skill, new Skill
-        {
-            itemName = "パワースラッシュ",
-            power = 25,
-            mpCost = 5,
-            price = 300,
-            description = "強力な物理攻撃"
-        });
-
-        AddItem(ShopCategoryType.Skill, new Skill
-        {
-            itemName = "ヒール",
-            power = 20,
-            mpCost = 4,
-            price = 250,
-            description = "HPを回復する"
-        });
-
-        AddItem(ShopCategoryType.Skill, new Skill
-        {
-            itemName = "ファイアブレード",
-            power = 30,
-            mpCost = 8,
-            price = 500,
-            description = "炎属性攻撃"
-        });
-
-        // ===== 武器 =====
-        AddItem(ShopCategoryType.Weapon, new Weapon
-        {
-            itemName = "鉄の剣",
-            atkBonus = 5,
-            price = 400,
-            description = "攻撃力+5"
-        });
-
-        AddItem(ShopCategoryType.Weapon, new Weapon
-        {
-            itemName = "鋼の剣",
-            atkBonus = 10,
-            price = 800,
-            description = "攻撃力+10"
-        });
-
-        AddItem(ShopCategoryType.Weapon, new Weapon
-        {
-            itemName = "伝説の剣",
-            atkBonus = 20,
-            price = 2000,
-            description = "攻撃力+20"
-        });
     }
 
     void AddItem(ShopCategoryType type, ItemBase item)
@@ -173,6 +120,8 @@ public class ShoppingSystem : MonoBehaviour
 
         for (int i = 0; i < category.items.Count; i++)
         {
+            ItemBase item = category.items[i];
+
             GameObject obj = Instantiate(category.rowPrefab, category.content);
 
             TextMeshProUGUI nameText =
@@ -181,8 +130,8 @@ public class ShoppingSystem : MonoBehaviour
             TextMeshProUGUI priceText =
                 obj.transform.Find("PriceText").GetComponent<TextMeshProUGUI>();
 
-            nameText.text = category.items[i].itemName;
-            priceText.text = category.items[i].price + "G";
+            nameText.text = item.itemName;
+            priceText.text = item.price + "G";
 
             texts.Add(nameText);
         }
@@ -202,8 +151,6 @@ public class ShoppingSystem : MonoBehaviour
     public void BuyItem(ShopCategory category, int index)
     {
         ItemBase item = category.items[index];
-
-        Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
         if (GameData.Instance.money >= item.price)
         {
